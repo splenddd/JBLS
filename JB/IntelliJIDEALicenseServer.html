@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,mimimum-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IntelliJIDEALicenseServer Statue</title>
     <link rel="shortcut icon" href="static/ico/favicon.ico" type="image/x-icon">
@@ -48,20 +48,10 @@
             position: relative;
         }
 
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
         .content {
             text-align: center;
             z-index: 100;
             margin-bottom: 15vh;
-        }
-
-        .title {
-            font-size: 84px;
         }
 
         .description {
@@ -96,13 +86,8 @@
             color: #52697f;
         }
 
-        .m-b-md {
-            margin-top: 0px;
-            margin-bottom: 0px;
-        }
-
-        .avatar {
-            width: 120px !important;
+        .status{
+            color:green;
         }
     </style>
 </head>
@@ -111,13 +96,19 @@
     <div id="background" class="background"></div>
     <div class="content">
         <div class="description">JetBrains激活服务器</div>
-        <div class="description-sm">运行状态：正常</div>
-        <div class="description-sm">服务器地址：替换这些文字</div>
+        <div class="description-sm">运行状态：<span class="status">正常</span></div>
+        <div class="description-sm btn">服务器地址：
+            <span id="context">http://ideaserver.pdflibr.com</span>
+            <button class="btn" data-clipboard-snippet="" data-clipboard-target="#context" data-clipboard-action="copy">
+                <img class="clippy" width="13" src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard">
+            </button>
+        </div>
         <div class="links">
-            <a class="link" href="替换这些文字"></i>使用帮助</a>
+            <a class="link" href="https://pdf-lib.org/Home/Details/2613"></i>使用帮助</a>
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 <script src="static/js/particles.js"></script>
 <script>
     particlesJS("background", {
@@ -182,6 +173,7 @@
             }
         }, "retina_detect": true
     });
+    new Clipboard('.btn');
 </script>
 </body>
 </html>
